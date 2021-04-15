@@ -18,7 +18,8 @@ class App extends Component {
 
       let weatherInfo = {
         city: locationResponse.data.results[0].components.postal_city,
-        temp: weatherResponse.data.current.temp
+        temp: weatherResponse.data.current.temp,
+        weather: weatherResponse.data.current.weather[0].main
       }
       this.setState({ location: weatherInfo })
       debugger
