@@ -27,10 +27,12 @@ class App extends Component {
 
   render() {
     return(
+      <Container>
       <div data-cy="weather-display">
       <h1 data-cy='location'>{this.state.location.city}</h1>
       <h2 data-cy='temp'>{this.state.location.temp}°C</h2>
       </div>
+      </Container>
     )
   }
 }
