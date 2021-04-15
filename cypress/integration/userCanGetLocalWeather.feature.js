@@ -1,15 +1,11 @@
 describe("weather info for user's location", () => {
-  beforeEach(() => {
-    cy.intercept("https://api.opencagedata.com/v1/json/**", {
-      fixture: "location_response_city.json",
-    });
-
+    
     beforeEach(() => {
       cy.intercept("https://api.openweathermap.org/data/2.5/**", {
         fixture: "weather_response.json",
       });
       cy.intercept("https://api.opencagedata.com/v1/json/**", {
-        fixture: "location_response.json",
+        fixture: "location_response_city.json",
       });
     });
     it("is expected to be displayed on initial render", () => {
@@ -36,4 +32,4 @@ describe("weather info for user's location", () => {
       });
     });
   });
-});
+

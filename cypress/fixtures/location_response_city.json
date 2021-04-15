@@ -1,4 +1,5 @@
-"documentation": "https://opencagedata.com/api",
+{
+  "documentation": "https://opencagedata.com/api",
   "licenses": [
       {
           "name": "see attribution guide",
@@ -113,7 +114,7 @@
               "house_number": "193A",
               "municipality": "Lyngby-Taarbæk Municipality",
               "political_union": "European Union",
-              "city": "Virum",
+              "village": "Virum",
               "postcode": "2830",
               "road": "Hummeltoftevej",
               "state": "Capital Region of Denmark"
