@@ -6,7 +6,7 @@ import { openCageResponse } from "./mocks/openCageMockResponse";
 import { openWeatherResponse } from "./mocks/openWeatherMockResponse";
 
 let axiosSpy, getPositionSpy;
-just.mock("react-chartjs-2", () => ({
+jest.mock("react-chartjs-2", () => ({
   Line: () => <h1>Chart will be displayed here</h1>,
 }));
 
