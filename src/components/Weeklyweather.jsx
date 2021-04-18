@@ -3,11 +3,10 @@ import { Grid,Header} from "semantic-ui-react";
 
 // weekend challenge
 const Weeklyweather = ({ dailyWeather }) => {
-  
+
   const forecastList = [];
   for (let i = 1; i < dailyWeather.length; i++) {
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let weather = dailyWeather[i].weather[0].main;
     forecastList.push(
       <Grid.Column key={i} textAlign="center" data-cy="seven-days-list-items">
         <Header.Content data-cy="week-day" className="days">
