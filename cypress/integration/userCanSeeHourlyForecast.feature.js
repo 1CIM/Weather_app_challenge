@@ -27,8 +27,6 @@ describe("Shows 24h forecast", () => {
   });
   it("is expected to show 24h forecast when hourly button is clicked", () => {
     cy.get("[data-cy=weather-display]").within(() => {
-      // cy.get("[data-cy=twenty-four-list]").should("not.exist")
-      // cy.get("[data-cy=hourly-btn]").click()
       cy.get("[data-cy=twenty-four-list]").children().should("have.length", 24)
     })
   })

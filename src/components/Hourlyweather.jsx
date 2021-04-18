@@ -31,22 +31,20 @@ const Hourlyweather = ({ hourlyWeather }) => {
       "24",
     ];
     hourlyWeatherList.push(
-      <Grid.Column key={i} textAlign="center">
-        <Header.Content>
+      <Grid.Column data-cy="twenty-four-list-items" key={i} textAlign="center">
+        <Header.Content data-cy="hour" >
           {hoursList[new Date(hourlyWeather[i].dt * 1000).getHours()]}
         </Header.Content>
-        <Header.Content>{hourlyWeather[i].weather[0].main}</Header.Content>
-        <Header.Content>{hourlyWeather[i].temp}°C</Header.Content>
+        <Header.Content data-cy="hourly-weather" >{hourlyWeather[i].weather[0].description}</Header.Content>
+        <Header.Content data-cy="hourly-temp" >{hourlyWeather[i].temp}°C</Header.Content>
       </Grid.Column>
     );
   }
 
   return (
-      <Grid columns="12" id="hou" divided>
-        <Grid.Row data-cy="twenty-four-list" className="ro"><Grid.Row ></Grid.Row>
-        {hourlyWeatherList}</Grid.Row>
+      <Grid columns="12" id="hou" >
+        <Grid.Row data-cy="twenty-four-list" divided>{hourlyWeatherList}</Grid.Row>
       </Grid>
-
   );
 };
 
