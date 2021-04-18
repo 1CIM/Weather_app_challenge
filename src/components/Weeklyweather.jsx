@@ -20,7 +20,7 @@ const Weeklyweather = ({ dailyWeather }) => {
 
   return (
     <Grid columns={7} celled id="hou" >
-      <Grid.Row data-cy="seven-days-list" >{forecastList}</Grid.Row>
+      <Grid.Row id="opaci" color="black" inverted data-cy="seven-days-list" >{forecastList}</Grid.Row>
     </Grid>
   );
 };

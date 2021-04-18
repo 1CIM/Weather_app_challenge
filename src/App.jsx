@@ -11,7 +11,7 @@ class App extends Component {
     dailyWeather: {},
     hourlyWeather: {},
   };
-
+  
   getGeolocation = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
@@ -34,6 +34,7 @@ class App extends Component {
         : locationResponse.data.results[0].components.city,
       temp: weatherResponse.data.current.temp,
       weather: weatherResponse.data.current.weather[0].description,
+      mainWeather: weatherResponse.data.current.weather[0].main,
       timezone:
         locationResponse.data.results[0].annotations.timezone.short_name,
     };
@@ -67,7 +68,7 @@ class App extends Component {
                   <Header textAlign="center" data-cy="timezone" ><Icon size="large" name="world"/>Time Zone: {timezone}</Header>
                 </Grid.Column>
                 <Grid.Column>
-                  <Header textAlign="center" data-cy="weather-type">{weather}</Header>
+                  <Header textAlign="center" data-cy="weather-type"> <Icon name="cloudversify" />{weather}</Header>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
