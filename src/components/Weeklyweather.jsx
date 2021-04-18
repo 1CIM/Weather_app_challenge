@@ -19,7 +19,7 @@ const Weeklyweather = ({ dailyWeather }) => {
   }
 
   return (
-    <Grid columns={7} divided id="hou" >
+    <Grid columns={7} celled id="hou" >
       <Grid.Row data-cy="seven-days-list" >{forecastList}</Grid.Row>
     </Grid>
   );

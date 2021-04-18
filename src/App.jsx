@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Container, Header, Segment, Grid, Icon } from "semantic-ui-react";
+import { Container, Image, Header, Segment, Grid, Icon } from "semantic-ui-react";
 import Weeklyweather from "./components/Weeklyweather.jsx";
 import Hourlyweather from './components/Hourlyweather.jsx'
 
@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <>
         <Container data-cy="weather-display" fluid>
-          <Header as="h1" textAlign="center" id="head" >
+          <Header as="h1" textAlign="center" style_id="head" >
             <Header.Content data-cy="location"><Icon size="large" name="building outline"/>
               {city}
             </Header.Content>
