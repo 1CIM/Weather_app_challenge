@@ -28,7 +28,7 @@ const Hourlyweather = ({ hourlyWeather }) => {
       "21",
       "22",
       "23",
-      "24",
+      "00",
     ];
     hourlyWeatherList.push(
       <Grid.Column data-cy="twenty-four-list-items" key={i} textAlign="center">
