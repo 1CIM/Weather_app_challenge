@@ -1,8 +1,11 @@
 import React from "react";
-import { Grid, Header } from "semantic-ui-react";
+import { Line } from "react-chartjs-2";
+// import { Grid, Header } from "semantic-ui-react";
 
 const Hourlyweather = ({ hourlyWeather }) => {
-  const hourlyWeatherList = [];
+  let data;
+  let hours = []
+  let dataItems = []
   for (let i = 0; i < hourlyWeather.length - 24; i++) {
     const hoursList = [
       "01",
@@ -30,22 +33,30 @@ const Hourlyweather = ({ hourlyWeather }) => {
       "23",
       "24",
     ];
-    hourlyWeatherList.push(
-      <Grid.Column data-cy="twenty-four-list-items" key={i} textAlign="center">
-        <Header.Content data-cy="hour" >
-          {hoursList[new Date(hourlyWeather[i].dt * 1000).getHours()]}
-        </Header.Content>
-        <Header.Content data-cy="hourly-weather" >{hourlyWeather[i].weather[0].description}</Header.Content>
-        <Header.Content data-cy="hourly-temp" >{hourlyWeather[i].temp}°C</Header.Content>
-      </Grid.Column>
-    );
+    hours.push(hoursList[new Date(hourlyWeather[i].dt * 1000).getHours()])
+    dataItems.push(hourlyWeather[i].temp)
+  }
+  data = {
+    datasets: [
+      {
+        label: "Daily Temperature",
+        data: dataItems,
+        borderColor: "#ffffff",
+        backgroundColor: "#000000",
+        opacity: "0.5"
+      },
+    ],
+    labels: hours
   }
 
   return (
     <div>
-      <Grid divided="vertically" celled columns={12}>
-        <Grid.Row id="opaci" color="black" inverted data-cy="twenty-four-list">{hourlyWeatherList}</Grid.Row>
-      </Grid>
+      <Line
+        data={data}
+        width={100}
+        height={250}
+        options={{ maintainAspectRatio: false }}
+      />
     </div>
   );
 };
